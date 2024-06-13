@@ -107,6 +107,9 @@ async function main() {
         })
         core.setOutput("output", output)
     } catch (error) {
+        if (output) {
+            core.setOutput("output", output)
+        }
         core.setFailed(error.message)
     }
 }
